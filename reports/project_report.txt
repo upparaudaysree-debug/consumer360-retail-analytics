@@ -1,0 +1,49 @@
+PROJECT TITLE:
+Consumer360 Retail Customer Analytics System
+
+OBJECTIVE:
+To analyze retail customer purchase behavior using Python, SQL, and data analytics techniques.
+
+TOOLS & TECHNOLOGIES:
+- Python
+- Pandas
+- Matplotlib
+- MySQL
+- VS Code
+
+DATASET:
+Online Retail Dataset
+
+PROJECT TASKS:
+1. Data Cleaning
+2. Feature Engineering
+3. RFM Analysis
+4. Customer Segmentation
+5. Data Visualization
+6. MySQL Integration
+7. Business Analytics Queries
+
+FEATURES IMPLEMENTED:
+- Removed missing values
+- Removed cancelled invoices
+- Created TotalPrice column
+- Performed RFM analysis
+- Classified customer segments
+- Visualized customer segments
+- Imported data into MySQL
+- Executed business SQL queries
+
+CUSTOMER SEGMENTS:
+- Champion
+- Loyal Customer
+- Regular Customer
+- At Risk
+
+BUSINESS INSIGHTS:
+- Identified top customers
+- Identified top products
+- Country-wise revenue analysis
+- Monthly revenue analysis
+
+CONCLUSION:
+The project successfully analyzed retail customer data and generated business insights using Python and SQL.

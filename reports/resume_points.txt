@@ -1,0 +1,17 @@
+PROJECT: Consumer360 Retail Customer Analytics System
+
+• Developed a retail customer analytics system using Python, Pandas, Matplotlib, and MySQL.
+
+• Performed data cleaning and preprocessing on large retail datasets.
+
+• Implemented RFM (Recency, Frequency, Monetary) analysis for customer segmentation.
+
+• Classified customers into Champion, Loyal Customer, Regular Customer, and At Risk categories.
+
+• Created data visualizations for customer segment analysis.
+
+• Integrated Python analytics workflow with MySQL database.
+
+• Executed SQL business analytics queries to identify top customers, top products, and revenue trends.
+
+• Exported analytical reports for dashboard and reporting purposes.
