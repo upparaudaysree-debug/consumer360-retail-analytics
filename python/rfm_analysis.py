@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("../data/OnlineRetail.csv", encoding='latin1')
+df = pd.read_csv("data/OnlineRetail.csv", encoding='latin1')
 
 # Data cleaning
 df = df.dropna(subset=['CustomerID'])
@@ -10,7 +10,7 @@ df = df[~df['InvoiceNo'].astype(str).str.startswith('C')]
 # Convert date column
 df['InvoiceDate'] = pd.to_datetime(df['InvoiceDate'])
 
-# Create TotalPrice
+# Create TotalPrice column
 df['TotalPrice'] = df['Quantity'] * df['UnitPrice']
 
 # Reference date
@@ -27,9 +27,13 @@ rfm = df.groupby('CustomerID').agg({
 rfm.columns = ['Recency', 'Frequency', 'Monetary']
 
 # RFM Scores
-rfm['R_Score'] = pd.qcut(rfm['Recency'], 4, labels=[4,3,2,1])
-rfm['F_Score'] = pd.qcut(rfm['Frequency'].rank(method='first'), 4, labels=[1,2,3,4])
-rfm['M_Score'] = pd.qcut(rfm['Monetary'], 4, labels=[1,2,3,4])
+rfm['R_Score'] = pd.qcut(rfm['Recency'], 4, labels=[4, 3, 2, 1])
+rfm['F_Score'] = pd.qcut(
+    rfm['Frequency'].rank(method='first'),
+    4,
+    labels=[1, 2, 3, 4]
+)
+rfm['M_Score'] = pd.qcut(rfm['Monetary'], 4, labels=[1, 2, 3, 4])
 
 # Customer Segmentation
 def segment_customer(row):
@@ -45,8 +49,10 @@ def segment_customer(row):
 rfm['Segment'] = rfm.apply(segment_customer, axis=1)
 
 # Display results
+print("TOP 20 CUSTOMER SEGMENTS")
 print(rfm.head(20))
-# Export RFM Analysis
-rfm.to_csv("../reports/rfm_customer_segments.csv")
 
-print("RFM Customer Segments Exported Successfully!")
+# Export RFM Analysis
+rfm.to_csv("reports/rfm_customer_segments.csv")
+
+print("\nRFM Customer Segments Exported Successfully!")

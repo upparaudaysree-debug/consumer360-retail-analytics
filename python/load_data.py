@@ -1,7 +1,7 @@
 import pandas as pd
 
 # Load dataset
-df = pd.read_csv("../data/OnlineRetail.csv", encoding='latin1')
+df = pd.read_csv("data/OnlineRetail.csv", encoding='latin1')
 
 # Show first rows
 print("FIRST 5 ROWS")
@@ -36,6 +36,6 @@ print("\nCLEANED DATA")
 print(df.head())
 
 # Export cleaned data
-df.head(5000).to_csv("../data/sample_retail_data.csv", index=False)
+df.head(5000).to_csv("data/sample_retail_data.csv", index=False)
 
 print("Cleaned data exported successfully!")
